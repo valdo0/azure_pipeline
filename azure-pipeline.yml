@@ -5,9 +5,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  azureSubscription: 'DuocUcS3' # Este es un nombre que debe cambiar al que crearon.
-  location: 'centralus'
-  resourceGroupName: 'DuocUcS3' # Este es un nombre que debe cambiar al que crearon.
+  azureSubscription: 'Prueba' # Este es un nombre que debe cambiar al que crearon.
+  location: 'eastus2'
+  resourceGroupName: 'Prueba' # Este es un nombre que debe cambiar al que crearon.
   virtualNetworkName: 'VNet-taller-DevOps'
   subnetName: 'Subnet-taller-DevOps'
   addressPrefix: '10.0.0.0/16'
