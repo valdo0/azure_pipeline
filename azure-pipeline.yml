@@ -5,16 +5,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  azureSubscription: 'S3DuocUc' 
+  azureSubscription: 'S6DuocUc' 
   location: 'eastus2'
-  resourceGroupName: 'S3DuocUc'
-  virtualNetworkName: 'VNet-S3DuocUc'
-  subnetName: 'Subnet-S3DuocUc'
+  resourceGroupName: 'S6DuocUc'
+  virtualNetworkName: 'VNet-S6DuocUc'
+  subnetName: 'Subnet-S6DuocUc'
   addressPrefix: '10.0.0.0/16'
   subnetPrefix: '10.0.1.0/24'
-  securityGroupName: 'NSG-S3DuocUc'
-  publicIpName: 'PublicIP-2-S3DuocUc'
-  vmName: 'VM-2-S3DuocUc'
+  securityGroupName: 'NSG-S6DuocUc'
+  publicIpName: 'PublicIP-2-S6DuocUc'
+  vmName: 'VM-2-S6DuocUc'
   vmSize: 'Standard_B1s'
   adminUsername: 'azureuser'
   adminPassword: 'Password1234$'
@@ -70,8 +70,3 @@ steps:
       echo "Máquina virtual creada."
       az vm wait --resource-group $(resourceGroupName) --name $(vmName) --created
 
-      # Instalar Apache y configurar la página de prueba
-      echo "Instalando Apache y configurando la página de prueba..."
-      az vm run-command invoke --resource-group $(resourceGroupName) --name $(vmName) --command-id RunShellScript --scripts "sudo apt update && sudo apt install -y apache2"
-      az vm run-command invoke --resource-group $(resourceGroupName) --name $(vmName) --command-id RunShellScript --scripts "echo 'hola curso devops hemos automatizado el despliegue de maquina virtual desde azure devops' | sudo tee /var/www/html/index.html"
-      echo "Apache instalado y página de bienvenida configurada."
